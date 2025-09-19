@@ -1,0 +1,44 @@
+{
+  "name": "md-to-shopify-rich-text",
+  "version": "1.0.1",
+  "description": "",
+  "main": "./dist/main.cjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "pnpm build:types && pnpm build:esbuild ",
+    "build:esbuild": "node esbuild.config.mjs",
+    "build:types": "tsc -p md-to-shopify-rich-text/tsconfig.json && dts-bundle-generator --export-referenced-types --project md-to-shopify-rich-text/tsconfig.json -o dist/main.d.ts md-to-shopify-rich-text/src/main.ts"
+  },
+  "types": "./dist/main.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/main.d.ts",
+        "default": "./dist/main.mjs"
+      },
+      "require": {
+        "types": "./dist/main.d.ts",
+        "default": "./dist/main.cjs"
+      }
+    }
+  },
+  "keywords": [
+    "markdown",
+    "metafield",
+    "shopify rich text"
+  ],
+  "author": "dlxmj",
+  "license": "MIT",
+  "workspaces": [
+    "marked",
+    "md-to-shopify-rich-text-src"
+  ],
+  "devDependencies": {
+    "dts-bundle-generator": "^9.5.1",
+    "esbuild": "^0.25.8",
+    "typescript": "^5.9.2"
+  }
+}

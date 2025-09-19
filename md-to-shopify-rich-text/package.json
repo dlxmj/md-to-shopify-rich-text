@@ -1,0 +1,24 @@
+{
+  "name": "md-to-shopify-rich-text-src",
+  "version": "0.0.1",
+  "private": false,
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
+  "scripts": {
+    "build": "tsc --build",
+    "check": "biome check .",
+    "check:unsafe": "biome check --write --unsafe .",
+    "check:write": "biome check --write .",
+    "start": "tsc && node ./dist/main.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.1.4",
+    "@types/node": "^22.15.33",
+    "typescript": "^5.9.2"
+  },
+  "packageManager": "pnpm@10.3.0",
+  "dependencies": {
+    "marked": "workspace:^"
+  }
+}

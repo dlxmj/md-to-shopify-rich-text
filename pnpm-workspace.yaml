@@ -1,0 +1,3 @@
+packages:
+  - "marked"
+  - "md-to-shopify-rich-text"
